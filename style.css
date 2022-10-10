@@ -1,0 +1,307 @@
+* {
+    box-sizing: border-box;     /*to include the padding and border in an element's total width and height */
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.tool-box {
+    height: 5rem;
+    background-color: #2C3A47;
+    display: flex;   
+    align-items: center;
+}
+
+.tool-box > * {         /* This will select all the children of tool-box*/
+    margin-left: 2rem;
+    border-radius: 2px;
+}
+
+.notes-sort {
+    height: 3rem;
+    width: 16rem;
+    background-color: #F8EFBA;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    
+}
+
+.notes-sort > *:hover{
+    border: 2px solid black;
+}
+
+.notes-action{
+    height: 3.5rem;
+    width: 8rem;
+    background-color: #F8EFBA;
+    display: flex;
+    font-size: 2rem;
+}
+
+.notes-action > *{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.dateSearch{
+    height: 3.5rem;
+    width: 25rem;
+    background-color: #F8EFBA;
+}
+
+.add-btn {
+    color:black;
+}
+
+.dlt-btn {
+    color: black;
+}
+
+.notes-action > *:hover {
+    cursor: pointer;
+    opacity: 0.4;
+    transition: 0.5s;
+    border: 2px solid black;
+}
+
+.color{
+    height: 1.5rem;
+    width: 3rem;
+    margin: 1px;
+    border-radius: 2px;
+}
+
+.lightsalmon{
+    background-color: lightsalmon;
+}
+
+.lightblue {
+    background-color: #25CCF7;
+}
+.lightgreen{
+    background-color: #badc58;
+}
+.lightpink{
+    background-color: lightpink;
+}
+
+.task-container {
+    width: 45vw;
+    height: 50vh;
+    position: absolute;
+    top: calc((100vh - 50vh)/2);
+    left: calc((100vw - 45vw)/2);
+    display: none;
+    
+}
+
+.textarea-container{
+    height: 100%;
+    width: 75%;
+    border: none;
+    outline: none;  /* Whenever textarea is clicked no outline will come.*/
+    resize: none;   /* Will remove the resize functionality of textarea*/
+    padding: 2rem;
+    font-size: 1.5rem;
+    background-color: #BDC581;
+    border-top-right-radius: 40px;
+    border-bottom-left-radius: 40px;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+
+.color-select-container{
+    height: 100%;
+    width: 25%;
+    background-color:  #2C3A47;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    border-end-end-radius: 40px;
+    border-top-left-radius: 40px;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+
+.search {
+    background-color: darkgreen;
+    color: white;
+    font-size: 0.9rem;
+    width: 5rem;
+    height: 2rem;text-align: center;
+    padding-top: 0.5rem ;
+    border-radius: 20px;
+}
+
+.enter{
+    background-color: darkgreen;
+    color: white;
+    font-size: 0.9rem;
+    width: 60%;
+    height: 8%;
+    padding-left: 0.5rem;
+    padding-top: 5px;
+    border-end-end-radius: 20px;
+}
+
+.enter:hover ,
+.search:hover {
+    cursor: pointer;
+    background-color: red;
+}
+
+.color-select-container > *:hover{
+    cursor: pointer;
+    transition: 0.5s;
+    opacity: 0.8;
+    
+}
+
+.color-select{
+    width: 60%;
+    height: 8%;
+    border-end-end-radius: 20px;
+}
+
+.border {
+    border: 3px solid darkblue;
+}
+
+.note-area {
+    height: 13rem;
+    width: 18rem;
+    background-color: #a5b1c2;
+    
+}
+
+.note-color {
+    height: 1rem;
+    
+}
+
+.note-time{
+    height: 1.5rem; 
+    padding: 0.2rem;
+    /* background-color: #4b6584; */
+    border: 2px solid #4b6584;
+    display: flex;
+    justify-content: space-around;
+}
+
+.note-description {
+    height: calc(100% - 2.5rem);
+    padding: 1rem;
+    background-color: #a5b1c2;
+    outline: none;
+    /* overflow: scroll;
+    text-overflow: ellipsis; */
+}
+
+.main-container{
+    display:flex;
+    flex-wrap: wrap;
+    padding: 2rem;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.lock{
+    background-color: #d1d8e0;
+    height: 1.5rem;
+    font-size: 1rem;
+    display: flex;
+    padding-top: 0.2rem;
+    padding-right: 0.5rem;
+    justify-content: flex-end;      /* Used to place the lock at the end.*/
+}
+
+/* For Responsive Site*/
+
+@media screen and (min-width: 425px) and (max-width: 768px) {
+    .task-container {
+        width: 55vw;
+        left: calc((100vw - 55vw)/2);
+    }
+}
+
+@media screen and (max-width: 426px) {
+    .task-container {
+        width: 75vw;
+        left: calc((100vw - 75vw)/2);
+    }
+    .tool-box > * {
+        margin-left: 0.5rem;
+    } 
+    .notes-sort{
+        width: 8rem;
+    }
+    .notes-action{
+        height: 3rem;
+    }
+    .dateSearch {
+        width: 14rem;
+        height: 3rem;
+    }
+    .enter{
+        font-size: 0.6rem;
+    }
+}
+
+@media screen and (max-width: 376px){
+    .task-container {
+        width: 60vw;
+        left: calc((100vw - 60vw)/2);
+        flex-direction: column;
+    }
+    .search{
+        width: 5rem;
+        font-size: 0.8rem;
+    }
+    .color-select-container{
+        flex-direction: row;
+        width: 100%;
+        height: 15%;
+        border-top-left-radius: 0px;
+    }
+    .textarea-container {
+        width: 100%;
+        height: 75%;
+        border-bottom-left-radius: 0px;
+    }
+
+    .enter{
+        width: 3.2rem;
+        height: 1rem;
+        border-radius: 1rem;
+        font-size: 0.6rem;
+        margin-right: 1.5rem;
+        padding-bottom: 1rem;
+    }
+    .color-select,.color{
+        width: 2rem;
+        border-radius: 1rem;
+        margin: 5px;
+        height: 1.5rem;
+    }
+    .dateSearch {
+        width: 10rem;
+    }
+    .textarea-container{
+        font-size: 0.9rem;
+        padding-left: 0.5rem;
+    }
+    
+}
+
+
+    
+
+
+
+
+
